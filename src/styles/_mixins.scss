@@ -1,0 +1,21 @@
+@mixin transform-scale($amount) {
+  -webkit-transform: scale($amount);
+          transform: scale($amount);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin breakpoint($point) {
+   @if $point == medium {
+     @media (min-width: 500px) { @content; }
+  }
+   @else if $point == large {
+     @media (min-width: 991px) { @content; }
+  }
+}

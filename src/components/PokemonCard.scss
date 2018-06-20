@@ -1,0 +1,40 @@
+@import '../styles/_mixins.scss';
+@import '../styles/_variables.scss';
+
+.pokemons__pokemon {
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $mainAccent;
+  }
+
+  .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-title {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  @include breakpoint(medium) {
+    width: 200px;
+    flex: 1 1 auto;
+    margin: 5px;
+
+    &:hover {
+      .card-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .card-title {
+      line-height: 1.5rem;
+      @include transition(font-size .3s ease);
+    }
+  }
+
+}
